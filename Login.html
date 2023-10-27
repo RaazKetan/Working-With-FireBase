@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    src="https://kit.fontawesome.com/64d58efce2.js"
-    crossorigin="anonymous"
-  ></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
@@ -54,8 +51,6 @@
           }
           
           .input-field {
-            max-width: 380px;
-            width: 100%;
             background-color: #f0f0f0;
             margin: 10px 0;
             height: 55px;
@@ -212,23 +207,23 @@
 </head>
 <body>
     <div class="container">
-    <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
             <h2 class="title">Login</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
+              <input type="text" name="username" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-message"></i>
+              <input type="password" name="email" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+              <input type="password" name="password" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
-            <button class="btn transparent" id="sign-up-btn">
-             <a href="">Sign-Up</a> 
-            </button>
-            <p class="social-text">Or Sign in with social platforms</p>
+            <input type="submit" id="saveData" name="login_submit" value="Login" class="btn solid" />
+          </form>
             <div class="social-media">
               <a href="#" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
@@ -244,7 +239,6 @@
               </a>
             </div>
         </div>
-     
         </div>
        
 </body>
