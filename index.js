@@ -1,0 +1,12 @@
+const appSettings = {
+    databaseURL: "https://playground-3df1d-default-rtdb.firebaseio.com/";
+}
+
+const inputFieldEl = document.getElementById("input-field");
+const addButtonEl = document.getElementById("add-button");
+
+addButtonEl.addEventListener("click",()=>{
+    let inputValue = inputFieldEl.value;
+
+    console.log(inputValue);
+})
