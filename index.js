@@ -25,24 +25,43 @@ addButtonEl.addEventListener("click",()=>{
 onValue(shoppingListInDB,function(snapshot){
 
     //use object.value to convert snapshot.val() from an Object to and Array. Create a variable for this
-    let itemsArray = Object.values(snapshot.val())
+
+ //Now we should add a delete button which delets the element with unique id prestent in the database
+
+
+
+
+
+
+    let itemsArray = Object.entries(snapshot.val())
 
     //BUg where the databse fetch all item when new item is added
      clearShopppingListEl();
     // loop to ierate on itemsArray and console.log each item
     for(let i = 0;i<itemsArray.length;i++){
+
+        let currentItem = itemsArray[i];
         // use he appendItemToShoppingListEl(itemValue) function inside of the for loop to append item to the shopping list element for each iteration
-    appendItemToShoppingListEl(itemsArray[i]);
+        let currentItemID= currentItem[0];
+        let currentItemValue = currentItem[1];  
+    appendItemToShoppingListEl(currentItem);
     }
 })
 
 function clearShopppingListEl(){
     shoppingListEl.innerHTML = ""
-    
 }
 function clearInputFieldEl(){
     inputFieldEl.value = ""
 }
-function appendItemToShoppingListEl(itemValue){
-    shoppingListEl.innerHTML+= `<li> ${itemValue}</li>`
+function appendItemToShoppingListEl(item){
+
+    let itemID = item[0];
+    let itemValue = item[1];
+   
+
+    let newEL = document.createElement("li");
+    newEL.textContent = itemValue;
+
+    shoppingListEl.appendChild(newEL);
 }
