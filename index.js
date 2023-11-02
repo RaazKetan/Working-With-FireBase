@@ -28,9 +28,7 @@ onValue(shoppingListInDB,function(snapshot){
     let itemsArray = Object.values(snapshot.val())
 
     //BUg where the databse fetch all item when new item is added
-
-    shoppingListEl.innerHTML = ""
-
+     clearShopppingListEl();
     // loop to ierate on itemsArray and console.log each item
     for(let i = 0;i<itemsArray.length;i++){
         // use he appendItemToShoppingListEl(itemValue) function inside of the for loop to append item to the shopping list element for each iteration
@@ -38,7 +36,10 @@ onValue(shoppingListInDB,function(snapshot){
     }
 })
 
-
+function clearShopppingListEl(){
+    shoppingListEl.innerHTML = ""
+    
+}
 function clearInputFieldEl(){
     inputFieldEl.value = ""
 }
